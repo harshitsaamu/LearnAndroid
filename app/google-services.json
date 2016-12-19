@@ -1,0 +1,42 @@
+{
+  "project_info": {
+    "project_number": "735216219449",
+    "firebase_url": "https://learn-android-5e0e1.firebaseio.com",
+    "project_id": "learn-android-5e0e1",
+    "storage_bucket": "learn-android-5e0e1.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:735216219449:android:90357fecf8b7e944",
+        "android_client_info": {
+          "package_name": "com.hgc.learnandroid"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "735216219449-5n1tvq2n4p0fe4k2ptfdt4s18cqs3ujc.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBH7Z1SDqSeTidPRwpe609mQtDcg4e_C3I"
+        }
+      ],
+      "services": {
+        "analytics_service": {
+          "status": 1
+        },
+        "appinvite_service": {
+          "status": 1,
+          "other_platform_oauth_client": []
+        },
+        "ads_service": {
+          "status": 2
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
