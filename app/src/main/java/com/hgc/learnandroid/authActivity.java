@@ -25,7 +25,7 @@ import com.google.firebase.auth.GoogleAuthProvider;
 
 public class authActivity extends AppCompatActivity {
     private ProgressDialog progressdialog;
-    private static final int RC_SIGN_IN = 69;
+    private static final int RC_SIGN_IN = 61;
     private FirebaseAuth mAuth;
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth.AuthStateListener mAuthListener;
