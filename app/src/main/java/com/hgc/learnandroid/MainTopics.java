@@ -56,7 +56,6 @@ public class MainTopics extends AppCompatActivity {
 
                         data.add(carddata);
                     }
-                    Toast.makeText(MainTopics.this,data+"", Toast.LENGTH_SHORT).show();
                     mTopics = (RecyclerView)findViewById(R.id.recy);
                     mAdapter = new mainTopicsAdapter(MainTopics.this, data);
                     mTopics.setAdapter(mAdapter);
