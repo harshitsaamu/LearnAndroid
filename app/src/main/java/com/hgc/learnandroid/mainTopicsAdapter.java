@@ -5,7 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
+import android.widget.RatingBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,56 +39,7 @@ public class mainTopicsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         mainTopicsMembers current = data.get(position);
         myHolder.title.setText(current.title);
         myHolder.body.setText(current.body);
-        myHolder.starone.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myHolder.starone.setImageResource(R.drawable.ic_star_fill);
-                myHolder.startwo.setImageResource(R.drawable.ic_star_unfill);
-                myHolder.starthree.setImageResource(R.drawable.ic_star_unfill);
-                myHolder.starfour.setImageResource(R.drawable.ic_star_unfill);
-                myHolder.starfive.setImageResource(R.drawable.ic_star_unfill);
-            }
-        });
-        myHolder.startwo.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myHolder.starone.setImageResource(R.drawable.ic_star_fill);
-                myHolder.startwo.setImageResource(R.drawable.ic_star_fill);
-                myHolder.starthree.setImageResource(R.drawable.ic_star_unfill);
-                myHolder.starfour.setImageResource(R.drawable.ic_star_unfill);
-                myHolder.starfive.setImageResource(R.drawable.ic_star_unfill);
-            }
-        });
-        myHolder.starthree.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myHolder.starone.setImageResource(R.drawable.ic_star_fill);
-                myHolder.startwo.setImageResource(R.drawable.ic_star_fill);
-                myHolder.starthree.setImageResource(R.drawable.ic_star_fill);
-                myHolder.starfour.setImageResource(R.drawable.ic_star_unfill);
-                myHolder.starfive.setImageResource(R.drawable.ic_star_unfill);
-            }
-        });
-        myHolder.starfour.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myHolder.starone.setImageResource(R.drawable.ic_star_fill);
-                myHolder.startwo.setImageResource(R.drawable.ic_star_fill);
-                myHolder.starthree.setImageResource(R.drawable.ic_star_fill);
-                myHolder.starfour.setImageResource(R.drawable.ic_star_fill);
-                myHolder.starfive.setImageResource(R.drawable.ic_star_unfill);
-            }
-        });
-        myHolder.starfive.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                myHolder.starone.setImageResource(R.drawable.ic_star_fill);
-                myHolder.startwo.setImageResource(R.drawable.ic_star_fill);
-                myHolder.starthree.setImageResource(R.drawable.ic_star_fill);
-                myHolder.starfour.setImageResource(R.drawable.ic_star_fill);
-                myHolder.starfive.setImageResource(R.drawable.ic_star_fill);
-            }
-        });
+        myHolder.starbar.setRating(4);
     }
     @Override
     public int getItemCount() {
@@ -99,7 +50,7 @@ public class mainTopicsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
 
         TextView title;
         TextView body;
-        ImageView starone,startwo,starthree,starfour,starfive;
+        RatingBar starbar;
 
         // create constructor to get widget reference
         public MyHolder(View itemView) {
@@ -112,11 +63,7 @@ public class mainTopicsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             });
             title = (TextView) itemView.findViewById(R.id.textTitle);
             body = (TextView) itemView.findViewById(R.id.textdata);
-            starone=(ImageView)itemView.findViewById(R.id.star1);
-            startwo=(ImageView)itemView.findViewById(R.id.star2);
-            starthree=(ImageView)itemView.findViewById(R.id.star3);
-            starfour=(ImageView)itemView.findViewById(R.id.star4);
-            starfive=(ImageView)itemView.findViewById(R.id.star5);
+            starbar=(RatingBar) itemView.findViewById(R.id.ratingBar);
 
         }
 
