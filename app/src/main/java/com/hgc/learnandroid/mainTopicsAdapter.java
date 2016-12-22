@@ -1,13 +1,13 @@
 package com.hgc.learnandroid;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.RatingBar;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import java.util.Collections;
 import java.util.List;
@@ -19,12 +19,14 @@ import java.util.List;
 public class mainTopicsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHolder>{
     private Context context;
     private LayoutInflater inflater;
-    List<mainTopicsMembers> data = Collections.emptyList();
+   private List<mainTopicsMembers> data = Collections.emptyList();
+   private String result;
 
-    public mainTopicsAdapter(Context context, List<mainTopicsMembers> data) {
+    public mainTopicsAdapter(Context context, List<mainTopicsMembers> data,String result) {
         this.context = context;
         inflater = LayoutInflater.from(context);
         this.data = data;
+        this.result=result;
     }
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -58,7 +60,11 @@ public class mainTopicsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             itemView.setOnClickListener(new View.OnClickListener() {
                 @Override
                 public void onClick(View v) {
-                    Toast.makeText(context, "clicled at pos "+getAdapterPosition(), Toast.LENGTH_SHORT).show();
+                    Intent intent=new Intent(context,SubActivity.class);
+                    int pos=getAdapterPosition();
+                    intent.putExtra("position",pos);
+                    intent.putExtra("jsonresult",result);
+                    context.startActivity(intent);
                 }
             });
             title = (TextView) itemView.findViewById(R.id.textTitle);

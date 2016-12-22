@@ -34,7 +34,7 @@ public class MainTopics extends AppCompatActivity {
     private RecyclerView mTopics;
     private mainTopicsAdapter mAdapter;
     private ProgressDialog pdLoading;
-    String URL = "http://information.16mb.com/android_maincards.JSON";
+    String URL = "http://learnandroid.16mb.com/main.JSON";
     RequestQueue requestQueue;
 
     @Override
@@ -75,11 +75,10 @@ public class MainTopics extends AppCompatActivity {
                         JSONObject finalObject = parentArray.getJSONObject(i);
                         carddata.title=finalObject.getString("title");
                         carddata.body=finalObject.getString("body");
-
                         data.add(carddata);
                     }
                     mTopics = (RecyclerView)findViewById(R.id.recy);
-                    mAdapter = new mainTopicsAdapter(MainTopics.this, data);
+                    mAdapter = new mainTopicsAdapter(MainTopics.this, data,result);
                     mTopics.setAdapter(mAdapter);
                     mTopics.setLayoutManager(new LinearLayoutManager(MainTopics.this));
                     pdLoading.dismiss();
