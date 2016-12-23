@@ -25,7 +25,10 @@
             </intent-filter>
         </activity>
         <activity android:name=".SubActivity" />
-        <activity android:name=".QuizActivity"></activity>
+        <activity android:name=".QuizActivity" />
+        <activity android:name=".Lesson_content" />
+        <activity android:name=".Sign_Up"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
     </application>
 
 </manifest>

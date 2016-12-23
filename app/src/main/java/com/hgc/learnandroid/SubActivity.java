@@ -8,6 +8,8 @@ import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.widget.Toast;
 
+import com.android.volley.RequestQueue;
+
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,6 +27,7 @@ public class SubActivity extends AppCompatActivity {
     private String jsonresult;
     private String quizjson;
     private int pos;
+    private RequestQueue requestQueue;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -64,5 +67,6 @@ public class SubActivity extends AppCompatActivity {
                     pdLoading.dismiss();
                 }
             }
+
 
 }

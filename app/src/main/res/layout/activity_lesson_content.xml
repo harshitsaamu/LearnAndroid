@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_lesson_content"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="com.hgc.learnandroid.Lesson_content">
+    <android.support.design.widget.FloatingActionButton
+        android:layout_width="60dp"
+        android:id="@+id/quizfab"
+        android:layout_height="60dp"
+        android:layout_gravity="end|bottom"
+        android:layout_margin="@dimen/fab_margin"/>
+</android.support.design.widget.CoordinatorLayout>

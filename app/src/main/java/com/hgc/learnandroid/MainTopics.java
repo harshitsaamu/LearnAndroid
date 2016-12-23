@@ -1,15 +1,16 @@
 package com.hgc.learnandroid;
 
 import android.app.ProgressDialog;
+import android.content.DialogInterface;
 import android.content.Intent;
-import android.support.annotation.NonNull;
-import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AlertDialog;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.view.Menu;
 import android.view.MenuItem;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -35,6 +36,7 @@ public class MainTopics extends AppCompatActivity {
     private mainTopicsAdapter mAdapter;
     private ProgressDialog pdLoading;
     String URL = "http://learnandroid.16mb.com/main.JSON";
+    String url="http://learnandroid.16mb.com/quiz.JSON";
     RequestQueue requestQueue;
 
     @Override
@@ -49,18 +51,17 @@ public class MainTopics extends AppCompatActivity {
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 if(firebaseAuth.getCurrentUser()==null)
                 {
+                    finish();
                     startActivity(new Intent(MainTopics.this,authActivity.class));
-                    MainTopics.this.finish();
                 }
             }
         };
 
         pdLoading = new ProgressDialog(MainTopics.this);
         pdLoading.setMessage("Please wait Loading....");
-        pdLoading.show();
         halwa();
     }
-    private void halwa(){
+    private void halwa(){pdLoading.show();
         final List<mainTopicsMembers> data=new ArrayList<>();
         requestQueue = Volley.newRequestQueue(this);
         JsonArrayRequest arrayRequest =new JsonArrayRequest(Request.Method.GET, URL, new Response.Listener<JSONArray>() {
@@ -84,16 +85,36 @@ public class MainTopics extends AppCompatActivity {
                     pdLoading.dismiss();
                 }
                 catch (JSONException e) {
-                    Toast.makeText(MainTopics.this, "error"+e, Toast.LENGTH_SHORT).show();
+//                    Toast.makeText(MainTopics.this, "error"+e, Toast.LENGTH_SHORT).show();
                     pdLoading.dismiss();
+                    AlertDialog.Builder dialogbox = new AlertDialog.Builder(MainTopics.this);
+                    dialogbox.setMessage("Can't fetch the data click to retry...");
+                    dialogbox.setCancelable(false);
+                    dialogbox.setPositiveButton("RETRY", new DialogInterface.OnClickListener() {
+                        @Override
+                        public void onClick(DialogInterface dialog, int which) {
+                            halwa();
+                        }
+                    });
+                    dialogbox.show();
                 }
             }
         },
                 new Response.ErrorListener() {
                     @Override
                     public void onErrorResponse(VolleyError error) {
-                        Toast.makeText(MainTopics.this, "volley error"+error, Toast.LENGTH_SHORT).show();
+//                        Toast.makeText(MainTopics.this, "volley error"+error, Toast.LENGTH_SHORT).show();
                         pdLoading.dismiss();
+                        AlertDialog.Builder dialogbox = new AlertDialog.Builder(MainTopics.this);
+                        dialogbox.setMessage("Can't fetch the data click to retry...");
+                        dialogbox.setCancelable(false);
+                        dialogbox.setPositiveButton("RETRY", new DialogInterface.OnClickListener() {
+                            @Override
+                            public void onClick(DialogInterface dialog, int which) {
+                                halwa();
+                            }
+                        });
+                        dialogbox.show();
                     }
                 }
         );

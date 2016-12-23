@@ -8,11 +8,11 @@
     android:background="#ffffff"
     tools:context="com.hgc.learnandroid.authActivity">
     <ImageView
-        android:layout_width="60dp"
-        android:layout_height="60dp"
-        android:src="@mipmap/ic_launcher"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:src="@mipmap/ic_app"
         android:id="@+id/icon"
-       android:layout_marginTop="55dp"
+       android:layout_marginTop="45dp"
         android:layout_centerHorizontal="true"
         />
     <TextView
@@ -38,7 +38,7 @@
         android:layout_marginRight="20dp"
         android:layout_marginTop="20dp">
     <EditText
-        android:id="@+id/username"
+        android:id="@+id/field_username"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:hint="Email"
@@ -59,7 +59,7 @@
         android:layout_marginTop="20dp"
         >
     <EditText
-        android:id="@+id/password"
+        android:id="@+id/field_password"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:hint="Password"
@@ -93,6 +93,7 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/forgotpass"
         android:text="Forget Password?"
         android:textColor="@color/colorSecondaryText"
         android:layout_below="@+id/bsignin"
