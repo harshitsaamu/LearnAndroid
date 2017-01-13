@@ -138,6 +138,7 @@ public class authActivity extends AppCompatActivity implements GoogleApiClient.O
                 firebaseAuthWithGoogle(account);
             } else {
                 Toast.makeText(this, "Sigin In Failed", Toast.LENGTH_SHORT).show();
+                progressdialog.dismiss();
             }
         }
     }
@@ -152,7 +153,7 @@ public class authActivity extends AppCompatActivity implements GoogleApiClient.O
                 .addOnCompleteListener(authActivity.this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
-
+                        finish();
                         startActivity(intent);
 
 
@@ -183,6 +184,7 @@ public class authActivity extends AppCompatActivity implements GoogleApiClient.O
 
     @Override
     public void onConnectionFailed(@NonNull ConnectionResult connectionResult) {
+        progressdialog.dismiss();
         Toast.makeText(this, "Connection Failed", Toast.LENGTH_SHORT).show();
     }
 
