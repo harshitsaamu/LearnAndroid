@@ -35,22 +35,20 @@ public class authActivity extends AppCompatActivity implements GoogleApiClient.O
     private FirebaseAuth mAuth;
     private GoogleApiClient mGoogleApiClient;
     private FirebaseAuth.AuthStateListener mAuthListener;
-    private SignInButton googlebut;
     private CardView button_sign_in;
     private TextView text_username,text_password,text_orsignup,text_forgot_password;
-    private String email,password;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-
+        SignInButton googlebut;
         mAuthListener = new FirebaseAuth.AuthStateListener() {
             @Override
             public void onAuthStateChanged(@NonNull FirebaseAuth firebaseAuth) {
                 FirebaseUser user = firebaseAuth.getCurrentUser();
                 if (user != null) {
                     finish();
-                    startActivity(new Intent(authActivity.this, MainTopics.class));
+                    startActivity(new Intent(authActivity.this, MainContent.class));
                 }
             }
         };
@@ -95,7 +93,7 @@ public class authActivity extends AppCompatActivity implements GoogleApiClient.O
     }
 
     private void sign_in_simple()
-    {
+    {   String email,password;
         progressdialog.show();
         email = text_username.getText().toString().trim();
         password = text_password.getText().toString().trim();
@@ -108,7 +106,7 @@ public class authActivity extends AppCompatActivity implements GoogleApiClient.O
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     progressdialog.dismiss();
                     if (task.isSuccessful()) {
-                        Intent i = new Intent(authActivity.this, MainTopics.class);
+                        Intent i = new Intent(authActivity.this, MainContent.class);
                         finish();
                         startActivity(i);
                     }
@@ -148,7 +146,7 @@ public class authActivity extends AppCompatActivity implements GoogleApiClient.O
         progressdialog.setMessage("Please Wait...");
         progressdialog.show();
 
-        final Intent intent = new Intent(authActivity.this, MainTopics.class);
+        final Intent intent = new Intent(authActivity.this, MainContent.class);
         AuthCredential credential = GoogleAuthProvider.getCredential(acct.getIdToken(), null);
         mAuth.signInWithCredential(credential)
                 .addOnCompleteListener(authActivity.this, new OnCompleteListener<AuthResult>() {

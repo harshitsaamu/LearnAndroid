@@ -8,13 +8,6 @@
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".MainTopics">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
-        </activity>
         <activity
             android:name=".authActivity"
             android:theme="@style/Theme.AppCompat.Light.NoActionBar">
@@ -27,8 +20,13 @@
         <activity android:name=".SubActivity" />
         <activity android:name=".QuizActivity" />
         <activity android:name=".Lesson_content" />
-        <activity android:name=".Sign_Up"
-            android:theme="@style/Theme.AppCompat.Light.NoActionBar"/>
+        <activity
+            android:name=".Sign_Up"
+            android:theme="@style/Theme.AppCompat.Light.NoActionBar" />
+        <activity
+            android:name=".MainContent"
+            android:label="@string/title_activity_main_content"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
     </application>
 
 </manifest>

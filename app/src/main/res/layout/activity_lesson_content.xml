@@ -5,10 +5,20 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.hgc.learnandroid.Lesson_content">
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/idlessoncontent"
+        android:layout_margin="16dp"/>
+    </ScrollView>
     <android.support.design.widget.FloatingActionButton
         android:layout_width="60dp"
         android:id="@+id/quizfab"
         android:layout_height="60dp"
         android:layout_gravity="end|bottom"
+        android:src="@drawable/ic_take_test"
         android:layout_margin="@dimen/fab_margin"/>
 </android.support.design.widget.CoordinatorLayout>
