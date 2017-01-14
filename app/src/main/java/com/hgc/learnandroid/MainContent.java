@@ -6,21 +6,20 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
-import android.support.v7.app.AlertDialog;
-import android.support.v7.widget.LinearLayoutManager;
-import android.support.v7.widget.RecyclerView;
-import android.view.View;
 import android.support.design.widget.NavigationView;
+import android.support.design.widget.Snackbar;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
 import android.support.v7.app.ActionBarDrawerToggle;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.LinearLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -46,7 +45,7 @@ public class MainContent extends AppCompatActivity
     private ProgressDialog pdLoading;
     String URL = "http://learnandroid.16mb.com/main.JSON";
     RequestQueue requestQueue;
-    TextView Textemail,Textname;
+    TextView Textname;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -61,7 +60,8 @@ public class MainContent extends AppCompatActivity
                 }
             }
         };
-        String name="Name";
+        String name;
+        //noinspection ConstantConditions
         name=firebaseAuth.getCurrentUser().getEmail();
 
 
@@ -191,8 +191,6 @@ public class MainContent extends AppCompatActivity
 
         if (id == R.id.nav_notes) {
             // Handle the camera action
-        } else if (id == R.id.nav_notes) {
-            Toast.makeText(this, "hahha", Toast.LENGTH_SHORT).show();
         }
         else if (id == R.id.nav_signout) {
 
