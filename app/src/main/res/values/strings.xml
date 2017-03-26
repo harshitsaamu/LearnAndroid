@@ -8,4 +8,28 @@
 
     <string name="action_settings">Settings</string>
     <string name="Forget_Password">Forget Password?</string>
+    <string name="string00">00</string>
+    <string name="string01">01</string>
+    <string name="string02">02</string>
+    <string name="string03">03</string>
+    <string name="string04">04</string>
+    <string name="string05">05</string>
+    <string name="string06">06</string>
+    <string name="string07">07</string>
+    <string name="string10">00</string>
+    <string name="string11">01</string>
+    <string name="string12">02</string>
+    <string name="string13">03</string>
+    <string name="string14">04</string>
+    <string name="string15">05</string>
+    <string name="string16">06</string>
+    <string name="string17">07</string>
+    <string name="string20">00</string>
+    <string name="string21">01</string>
+    <string name="string22">02</string>
+    <string name="string23">03</string>
+    <string name="string24">04</string>
+    <string name="string25">05</string>
+    <string name="string26">06</string>
+    <string name="string27">07</string>
 </resources>

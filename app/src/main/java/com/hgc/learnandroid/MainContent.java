@@ -19,7 +19,9 @@ import android.support.v7.widget.Toolbar;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.RatingBar;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
@@ -46,6 +48,7 @@ public class MainContent extends AppCompatActivity
     String URL = "http://learnandroid.16mb.com/main.JSON";
     RequestQueue requestQueue;
     TextView Textname;
+    RatingBar ratingBar;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -193,10 +196,11 @@ public class MainContent extends AppCompatActivity
             // Handle the camera action
         }
         else if (id == R.id.nav_signout) {
-
+            firebaseAuth.signOut();
+            finish();
         }
         else if (id == R.id.nav_settings) {
-
+            Toast.makeText(this, "settings", Toast.LENGTH_SHORT).show();
         }
         else if (id == R.id.nav_share) {
 

@@ -42,6 +42,7 @@ public class mainTopicsAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         myHolder.title.setText(current.title);
         myHolder.body.setText(current.body);
         myHolder.starbar.setRating(4);
+        //myHolder.starbar.setRating(current.rating);
     }
     @Override
     public int getItemCount() {

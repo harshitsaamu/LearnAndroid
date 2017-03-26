@@ -55,10 +55,9 @@ public class SubActivity extends AppCompatActivity {
                         JSONObject finalObject = childArray.getJSONObject(i);
                         carddata.subtitle = finalObject.getString("subtitle");
                         data.add(carddata);
-
                     }
                     mSubTopics = (RecyclerView) findViewById(R.id.sub_activity_recy);
-                    mAdapter = new SubActivityAdapter(SubActivity.this, data,result);
+                    mAdapter = new SubActivityAdapter(SubActivity.this, data,result,pos);
                     mSubTopics.setAdapter(mAdapter);
                     mSubTopics.setLayoutManager(new LinearLayoutManager(SubActivity.this));
                     pdLoading.dismiss();

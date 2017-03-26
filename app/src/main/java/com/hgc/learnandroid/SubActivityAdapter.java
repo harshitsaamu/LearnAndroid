@@ -20,13 +20,15 @@ public class SubActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
     private LayoutInflater inflater;
    private List<SubActivityMembers> data=Collections.emptyList();
     private String result;
+    private int position;
 
-    SubActivityAdapter(Context context,List<SubActivityMembers> data,String result)
+    SubActivityAdapter(Context context,List<SubActivityMembers> data,String result,int positionPrev)
     {
         this.context=context;
         inflater = LayoutInflater.from(context);
         this.data=data;
         this.result=result;
+        position=positionPrev;
     }
     @Override
     public RecyclerView.ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
@@ -60,6 +62,7 @@ public class SubActivityAdapter extends RecyclerView.Adapter<RecyclerView.ViewHo
                     Intent intent=new Intent(context,Lesson_content.class);
                     int pos=getAdapterPosition();
                     intent.putExtra("position",pos);
+                    intent.putExtra("positionPrevious",position);
                     context.startActivity(intent);
 //                    Toast.makeText(context,result, Toast.LENGTH_SHORT).show();
                 }
