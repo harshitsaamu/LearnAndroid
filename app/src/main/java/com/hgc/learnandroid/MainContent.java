@@ -71,14 +71,14 @@ public class MainContent extends AppCompatActivity
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Hey Buddy", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
+//        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+//        fab.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                Snackbar.make(view, "Hey Buddy", Snackbar.LENGTH_LONG)
+//                        .setAction("Action", null).show();
+//            }
+//        });
 
         DrawerLayout drawer = (DrawerLayout) findViewById(R.id.drawer_layout);
         ActionBarDrawerToggle toggle = new ActionBarDrawerToggle(
@@ -193,29 +193,37 @@ public class MainContent extends AppCompatActivity
         int id = itema.getItemId();
 
         if (id == R.id.nav_notes) {
-            // Handle the camera action
+           Intent notes_intent=new Intent(MainContent.this,Notes.class);
+            startActivity(notes_intent);
         }
         else if (id == R.id.nav_signout) {
             firebaseAuth.signOut();
             finish();
         }
-        else if (id == R.id.nav_settings) {
-            Toast.makeText(this, "settings", Toast.LENGTH_SHORT).show();
-        }
+//        else if (id == R.id.nav_settings) {
+//            Toast.makeText(this, "settings", Toast.LENGTH_SHORT).show();
+//        }
         else if (id == R.id.nav_share) {
 
         }
-        else if (id == R.id.nav_faq) {
-
-        }
-        else if (id == R.id.nav_assignments) {
-
-        }
-        else if (id == R.id.nav_leaderboard) {
-
-        }
+//        else if (id == R.id.nav_faq) {
+//
+//        }
+//        else if (id == R.id.nav_assignments) {
+//
+//        }
+//        else if (id == R.id.nav_leaderboard) {
+//
+//        }
         else if (id == R.id.nav_contactus) {
+            final Intent emailIntent = new Intent(android.content.Intent.ACTION_SEND);
 
+/* Fill it with Data */
+            emailIntent.setType("plain/text");
+            emailIntent.putExtra(android.content.Intent.EXTRA_EMAIL, new String[]{"aakashandro@gmail.com"});
+            emailIntent.putExtra(android.content.Intent.EXTRA_SUBJECT, "Contact us mail");
+/* Send it off to the Activity-Chooser */
+          startActivity(Intent.createChooser(emailIntent, "Send mail from.."));
         }
         else if (id == R.id.nav_account) {
 

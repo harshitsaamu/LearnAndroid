@@ -74,25 +74,25 @@ public class Sign_Up extends AppCompatActivity implements View.OnClickListener {
                 @Override
                 public void onComplete(@NonNull Task<AuthResult> task) {
                     if (task.isSuccessful()) {
-                        FirebaseUser user = mAuth.getCurrentUser();
-                        UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
-                                .setDisplayName(name).build();
+//                        FirebaseUser user = mAuth.getCurrentUser();
+//                        UserProfileChangeRequest profileChangeRequest = new UserProfileChangeRequest.Builder()
+//                                .setDisplayName(name).build();
                         //noinspection ConstantConditions
-                        user.updateProfile(profileChangeRequest).addOnCompleteListener(new OnCompleteListener<Void>() {
-                            @Override
-                            public void onComplete(@NonNull Task<Void> taskk) {
-                                if (taskk.isSuccessful()) {
+//                        user.updateProfile(profileChangeRequest).addOnCompleteListener(new OnCompleteListener<Void>() {
+//                            @Override
+//                            public void onComplete(@NonNull Task<Void> taskk) {
+//                                if (taskk.isSuccessful()) {
                                     Toast.makeText(Sign_Up.this, "Account Updated", Toast.LENGTH_SHORT).show();
                                     pdLoading.dismiss();
                                     finish();
                                     Intent i = new Intent(Sign_Up.this, MainContent.class);
                                     startActivity(i);
-                                } else {
-                                    pdLoading.dismiss();
-                                    Toast.makeText(Sign_Up.this, "error in updating name", Toast.LENGTH_SHORT).show();
-                                }
-                            }
-                        });
+//                                } else {
+//                                    pdLoading.dismiss();
+//                                    Toast.makeText(Sign_Up.this, "error in updating name", Toast.LENGTH_SHORT).show();
+//                                }
+//                            }
+//                        });
                     } else {
                         pdLoading.dismiss();
                         Toast.makeText(Sign_Up.this, "An error occurred..", Toast.LENGTH_SHORT).show();
