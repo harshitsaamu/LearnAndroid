@@ -6,11 +6,11 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="#ffffff"
-    tools:context="com.hgc.learnandroid.authActivity">
+    tools:context="org.aakashresearchlabs.learnandroid.authActivity">
     <ImageView
         android:layout_width="80dp"
         android:layout_height="80dp"
-        android:src="@mipmap/ic_app"
+        android:src="@mipmap/ic_launcher"
         android:id="@+id/icon"
        android:layout_marginTop="45dp"
         android:layout_centerHorizontal="true"

@@ -4,7 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.hgc.learnandroid.SubActivity">
+    tools:context="org.aakashresearchlabs.learnandroid.SubActivity">
     <android.support.v7.widget.RecyclerView
         android:id="@+id/sub_activity_recy"
         android:background="#ffffff"

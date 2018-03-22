@@ -5,7 +5,7 @@
     android:id="@+id/activity_quiz"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.hgc.learnandroid.QuizActivity">
+    tools:context="org.aakashresearchlabs.learnandroid.QuizActivity">
 
     <ScrollView
         android:layout_width="match_parent"

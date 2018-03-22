@@ -4,7 +4,7 @@
     android:id="@+id/activity_lesson_content"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.hgc.learnandroid.Lesson_content">
+    tools:context="org.aakashresearchlabs.learnandroid.Lesson_content">
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent">

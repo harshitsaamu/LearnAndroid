@@ -5,14 +5,14 @@ android {
         config {
             keyAlias 'hgc'
             keyPassword 'andro@aakash'
-            storeFile file('C:/Users/hp/AndroidStudioProjects/storage/LearnAndroid.jks')
+            storeFile file('C:\\Users\\harshit\\AndroidStudioProjects\\learnandroid.jks')
             storePassword 'andro@aakash'
         }
     }
     compileSdkVersion 24
     buildToolsVersion '25.0.0'
     defaultConfig {
-        applicationId "com.hgc.learnandroid"
+        applicationId "org.aakashresearchlabs.learnandroid"
         minSdkVersion 16
         targetSdkVersion 24
         versionCode 1
@@ -41,6 +41,7 @@ dependencies {
     compile 'com.google.android.gms:play-services-auth:9.8.0'
     compile 'com.android.support:design:24.2.1'
     compile 'com.android.support.constraint:constraint-layout:1.0.2'
+    compile 'com.google.code.gson:gson:2.8.0'
     testCompile 'junit:junit:4.12'
 }
 apply plugin: 'com.google.gms.google-services'
